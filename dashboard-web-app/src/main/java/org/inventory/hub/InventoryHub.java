@@ -10,32 +10,20 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-import org.springframework.cloud.stream.annotation.EnableBinding;
-import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.cloud.stream.messaging.Sink;
-import org.springframework.messaging.Message;
-
-import org.codehaus.jackson.map.ObjectMapper;
-
-import org.inventory.hub.controller.TransactionsController;
-import org.inventory.hub.event.Transaction;
-
-import java.lang.reflect.Field;
-import java.util.Map;
-import java.util.UUID;
-
-@EnableBinding(Sink.class)
+//@EnableBinding(Sink.class)
 @SpringBootApplication
 public class InventoryHub extends SpringBootServletInitializer {
 
-    ObjectMapper objectMapper = new ObjectMapper();
-    Transaction transaction = new Transaction();
-
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(InventoryHub.class);
+    }
+    
     public static void main(String[] args) throws Exception {
         SpringApplication.run(InventoryHub.class, args);
     }
 
-    @StreamListener(target=Sink.INPUT)
+    /*@StreamListener(target=Sink.INPUT)
 	public void receiveTransaction(String transactionMessage) {
 
         System.out.println("message is: " + transactionMessage);
@@ -55,12 +43,10 @@ public class InventoryHub extends SpringBootServletInitializer {
 			e.printStackTrace();
         }
 
-    }
+    }*/
 
-    @StreamListener("errorChannel")
+    /*@StreamListener("errorChannel")
 	public void errorGlobal(Message<?> message) {
 		System.out.println("Handling ERROR: " + message);
-	}
-
-
+	}*/
 }
