@@ -34,7 +34,6 @@ import com.nimbusds.jwt.JWTParser;
 
 public class CustomAuthenticateCallbackHandler implements AuthenticateCallbackHandler {
 
-    final static ScheduledExecutorService EXECUTOR_SERVICE = Executors.newScheduledThreadPool(1);
     final static AppServiceMSICredentials CREDENTIALS = 
             new AppServiceMSICredentials(AzureEnvironment.AZURE).withClientId(System.getenv("NOTIFICATIONS_EVENT_HUB_AAD_CLIENT_ID"));
     

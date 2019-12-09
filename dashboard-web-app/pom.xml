@@ -204,9 +204,9 @@
                 <configuration>
 
                     <!-- Web App information -->
-                    <resourceGroup>kafkaoauthdemo</resourceGroup>
-                    <appName>kafkaoauthdashboard</appName>
-                    <region>southcentralus</region>
+                    <resourceGroup>${azure.app.resourceGroupName}</resourceGroup>
+                    <appName>${azure.app.name}</appName>
+                    <region>${azure.app.region}</region>
 
                     <!-- Java Runtime Stack for Web App on Linux-->
                     <runtime>
@@ -258,14 +258,6 @@
                             <value>${NOTIFICATIONS_EVENT_HUB_CONSUMER_GROUP_NAME}</value>
                         </property>
                         <property>
-                            <name>NOTIFICATIONS_EVENT_HUB_CONNECTION_STRING</name>
-                            <value>${NOTIFICATIONS_EVENT_HUB_CONNECTION_STRING}</value>
-                        </property>
-                        <property>
-                            <name>NOTIFICATIONS_EVENT_HUB_NAMESPACE_CONNECTION_STRING</name>
-                            <value>${NOTIFICATIONS_EVENT_HUB_NAMESPACE_CONNECTION_STRING}</value>
-                        </property>
-                        <property>
                             <name>NOTIFICATIONS_STORAGE_CONTAINER_NAME</name>
                             <value>${NOTIFICATIONS_STORAGE_CONTAINER_NAME}</value>
                         </property>
@@ -280,37 +272,6 @@
                         <property>
                             <name>NOTIFICATIONS_EVENT_HUB_FQDN</name>
                             <value>${NOTIFICATIONS_EVENT_HUB_FQDN}</value>
-                        </property>
-                        <property>
-                            <name>NOTIFICATION_ERRORS_EVENT_HUB_NAME</name>
-                            <value>${NOTIFICATION_ERRORS_EVENT_HUB_NAME}</value>
-                        </property>
-
-
-                        <!--  AAD B2C related  -->
-                        <property>
-                            <name>TENANT_NAME</name>
-                            <value>${TENANT_NAME}</value>
-                        </property>
-                        <property>
-                            <name>B2C_CLIENT_ID</name>
-                            <value>${B2C_CLIENT_ID}</value>
-                        </property>
-                        <property>
-                            <name>B2C_CLIENT_SECRET</name>
-                            <value>${B2C_CLIENT_SECRET}</value>
-                        </property>
-                        <property>
-                            <name>B2C_REPLY_URL</name>
-                            <value>${B2C_REPLY_URL}</value>
-                        </property>
-                        <property>
-                            <name>B2C_LOGOUT_SUCCESS_URL</name>
-                            <value>${B2C_LOGOUT_SUCCESS_URL}</value>
-                        </property>
-                        <property>
-                            <name>USER_FLOW_SIGNUP_SIGNIN</name>
-                            <value>${USER_FLOW_SIGNUP_SIGNIN}</value>
                         </property>
 
                         <!-- App Insights -->
